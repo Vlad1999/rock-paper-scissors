@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-An implementation of [Rock Paper Scissors](https://en.wikipedia.org/wiki/Rock_paper_scissors) game in [ReactJS](https://reactjs.org/). [Play the game]()
+An implementation of [Rock Paper Scissors](https://en.wikipedia.org/wiki/Rock_paper_scissors) game in ReactJS. [Play the game]()
 
 ## Development stack
 - Client: ReactJS
