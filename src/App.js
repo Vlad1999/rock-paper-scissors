@@ -17,36 +17,23 @@ function App() {
 
   const ai = ["rock", "paper", "scissors"];
 
-  const check = (choice, aiChoice) => {
+   const check = (choice, aiChoice) => {
+    let result;
     if (choice && choice === aiChoice) {
-      setScore("draw");
-      setHistory((prevState) => ({...prevState, draw: prevState.draw +1}));
+      result = "draw";
     } else if (choice && choice === "rock") {
-      if (aiChoice === "scissors") {
-        setScore("win");
-        setHistory((prevState) => ({...prevState, win: prevState.win +1}));
-      } else {
-        setScore("lose");
-        setHistory((prevState) => ({...prevState, lose: prevState.lose +1}));
-      }
+      result = aiChoice === "scissors" ? "win" : "lose";
     } else if (choice && choice === "paper") {
-      if (aiChoice === "rock") {
-        setScore("win");
-        setHistory((prevState) => ({...prevState, win: prevState.win +1}));
-      } else {
-        setScore("lose");
-        setHistory((prevState) => ({...prevState, lose: prevState.lose +1}));
-      }
+      result = aiChoice === "rock" ? "win" : "lose";
     } else if (choice && choice === "scissors") {
-      if (aiChoice === "paper") {
-        setScore("win");
-        setHistory((prevState) => ({...prevState, win: prevState.win +1}));
-      } else {
-        setScore("lose");
-        setHistory((prevState) => ({...prevState, lose: prevState.lose +1}));
-      }
+      result = aiChoice === "paper" ? "win" : "lose";
     }
-  }
+    setScore(result);
+    setHistory((prevState) => ({
+      ...prevState,
+      [result]: prevState[result] + 1,
+    }));
+  };
 
   const handleClick = (choice) => {
     setChoice(choice);
